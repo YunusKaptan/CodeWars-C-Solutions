@@ -1,0 +1,28 @@
+using System;
+public static class Kata
+{
+  public static long RowSumOddNumbers(long rowNumber)
+  {
+    // row 1 = firstnum =>1 
+    // row 2 = firstnum =>3
+    // row 3 = firstnum =>7
+    //rowNumber = n;
+    // firstnum= = n^2 - (n-1)
+    
+    long currentValue = GetFirstValueForRow(rowNumber);
+    long sum = currentValue;
+    
+      for (int i = 1; i<rowNumber; ++i)
+      {
+      currentValue += 2;
+      sum += currentValue;
+      }
+    
+    return sum;
+    
+    }
+    private static long GetFirstValueForRow(long rowNumber)
+    {
+      return rowNumber * rowNumber - (rowNumber - 1);
+    }
+}
