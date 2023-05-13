@@ -1,0 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public static class Kata
+{
+  public static string AlphabetPosition(string text)
+  {
+    var char_positions = text.ToLower().Where(ch => Char.IsLetter(ch)).Select(ch =>(int)ch%32).ToArray();
+    
+    return string.Join(" ",char_positions);
+  }
+}
